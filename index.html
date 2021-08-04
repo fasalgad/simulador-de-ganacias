@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simula tus ganancias</title>
+    <link rel="icon" href="theoma-favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet" >
+</head>
+<body>
+    <div id="msg"></div>
+    <div class="products-container">
+        
+        <h1>Simula<br><span>tus ganancias</span></h1>
+        <hr>
+        <section id="products-added">
+            <table id="products-table" class="table-custom">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Precio lista</th>
+                        <th>Precio venta</th>
+                        <th class="th_quantity">Cantidad</th>
+                        <th>Subtotal lista</th>
+                        <th>Subtotal venta</th>
+                        <th class="hide">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="products-table-body"></tbody>
+                <tfoot>
+                </tfoot>
+            </table>
+        </section>
+
+        <section id="products-totals">
+            <div class="products-totals-center">
+                <p><strong>Total lista:</strong> <span class="total_precio">$<span id="total_lista">0</span></span></p>
+                <p><strong>Total venta:</strong> <span class="total_precio">$<span id="total_venta">0</span></span></p>
+                <p class="custom-btn yellow"><strong>Ganancia total:</strong> <span class="total_precio">$<span id="total_ganancia">0</span></span></p>
+                <button class="custom-btn hide" id="btClean" onclick="cleanProducts()">Limpiar todo</button>
+                <button class="custom-btn hide" id="btPrint" onclick="createPDF()">Descargar</button>
+            </div>
+        </section>        
+        <img class="loader" src="loader.svg" alt="Cargando...">
+        <section id="products"></section>
+    </div>
+    <template id="product-template">
+        <article class="product">
+            <img src="" alt="" class="product-img">
+            <div class="product-content">
+                <h4 class="product-title"></h4>
+                <p style="display:none">$<span class="product-price-list"></span></p>
+                <p>Precio: $<span class="product-price-sell"></span></p>
+                <input type="hidden" class="product-id" value="">
+                <input type="number" class="product-quantity" value="1" min="1">
+                <p style="text-align:right;margin-bottom:0"><button class="product-btn" onclick="addProduct(this)">Añadir</button></p>
+            </div>
+        </article>
+    </template>
+    <button class="scrollToTopBtn"><img width="28" weight="28" src="up.svg" alt="UP"></button>
+    <script src="app.js"></script>
+</body>
+</html>

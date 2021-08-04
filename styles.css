@@ -1,0 +1,151 @@
+* {box-sizing: border-box;}
+body {
+    font-family: 'Montserrat', sans-serif;
+    color:#164734;
+    scroll-behavior: smooth;
+}
+.loader {margin:30px auto 0 auto;display:block;}
+.scrollToTopBtn {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 99;
+    outline: none;
+    border:0;
+    background-color: #FFDE16;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: transform 0.5s, opacity 0.3s;
+}
+.showScrollBtn {
+    transform: translateY(0);
+    opacity: 1;
+}
+h1 {color:#2FB777;text-align:center;margin-top:60px;margin-bottom:50px;font-size:44px;letter-spacing: -1.6px;line-height:1em;}
+hr {border:solid 3px #2FB777;width:20%;margin-bottom:60px;}
+h4.product-title {margin-top:0;margin-bottom:15px;}
+.product input {border-width:0;font-weight:400;font-size:14px;padding:4px 12px;min-height:32px;border-radius:2px;width:100%;margin-bottom:20px;}
+.products-container {
+    width:90%;
+    max-width:1160px;
+    margin:0 auto;
+}
+.custom-btn, .product-btn {
+    display:inline-block;
+    text-align:center;
+    transition: all .3s;
+    color: #FFDE16;
+    background-color: #2FB777;
+    border:0;
+    border-radius: 30px 30px 30px 0px;
+    padding: 10px 40px 10px 30px;
+    font-size:25px;
+    font-weight:600;
+    letter-spacing:-1.6px;
+    line-height:1em;
+    margin-bottom:0;
+}
+.custom-btn {
+    margin-bottom:15px;
+    min-width:210px;
+}
+.custom-btn:hover, .product-btn:hover {
+    cursor:pointer;
+    color:#fff;
+}
+.custom-btn.yellow {
+    padding: 20px 30px 20px 30px;
+    background-color:#FFDE16;
+    color:#2FB777;
+    margin-bottom:15px!important;
+    margin-top:15px!important;
+    max-width:425px;
+    display:block;
+    margin:0 auto;
+}
+#products {
+    display:grid;
+    grid-gap:20px;
+    grid-template-columns: repeat(1, 1fr);
+    margin-bottom:60px;
+    margin-top:60px;
+}
+#products > .product {
+    background-color:rgb(241, 241, 241);
+    padding: 0;
+    border-radius: 30px 30px 30px 30px;
+    width:100%;
+    overflow:hidden;
+}
+.product-img {
+    width:100%;
+    height:auto;
+}
+.product-content {
+    padding:15px;
+}
+.product-content p {
+    margin-top:0;margin-bottom:15px;
+}
+#products-totals {
+    margin:0 auto 45px auto;
+    border-radius:30px;
+    padding:15px;;
+    text-align:center;
+}
+#products-totals p {
+    margin-top:5px;
+    margin-bottom:5px;
+}
+#products-totals .total_precio {
+    color:#164734;
+    font-weight:600;
+}
+.table-custom {font-size:14px;text-align:left;border-spacing:0;display: block;border-radius:30px;padding-top:15px;padding-bottom:15px;border-collapse: collapse;table-layout: fixed;width:100%;}
+.table-custom input {font-weight:400;font-size:14px;padding:4px 12px;min-height:32px;border-radius:2px;border:solid 1px #ccc;width:80px;}
+.table-custom thead th,
+.table-custom tbody td {padding:8px 15px;}
+.table-custom tbody {width:100%;display:block;}
+.table-custom td {display:flex;}
+.table-custom thead {display:none;}
+.table-custom tr {border: 1px solid #dee2e6;display: block;margin-bottom:45px;border-radius:30px;padding-top:15px;padding-bottom:15px;}
+.table-custom td::before {content: attr(data-label);font-weight: bold;width:120px;}
+.product-delete {border:0;background-color:transparent;color:red;font-weight:600;}
+.product-delete:hover {cursor:pointer;}
+@media screen and (min-width:640px) {
+    .products-container {width:80%;}
+    #products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    h1 span {font-size:54px;}
+    h4.product-title {min-height:38px;}
+    .custom-btn.yellow {min-width:425px;}
+}
+
+@media screen and (min-width:768px) {
+    .products-container {width:90%;}
+    .table-custom {table-layout:auto;display:table;margin-bottom:45px;}
+    .table-custom thead {display:table-header-group;}
+    .table-custom tbody {display:table-row-group;}
+    .table-custom tbody tr:nth-child(odd) {background-color:rgb(241, 241, 241);}
+    .table-custom tbody td {padding:15px;}
+    .table-custom td {display:table-cell;}
+    .table-custom tr {border:0;display:table-row;margin:0;border-radius:0;padding:0;}
+    .table-custom td::before {display:none;}
+}
+
+@media screen and (min-width:960px) {
+    #products {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (min-width:1200px) {
+    #products {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
